@@ -9,7 +9,7 @@ const config = {
   title: 'My Site',
   tagline: 'Dinosaurs are cool',
   url: 'https://isjanebea.github.io/docsauro-hello-word/',
-  baseUrl: '/',
+  baseUrl: '/docsauro-hello-word/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
