@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_posiion: 1
 ---
 
 # Tutorial Intro
