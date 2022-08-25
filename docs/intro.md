@@ -1,5 +1,5 @@
 ---
-sidebar_posiion: 1
+sidebar_position: 1
 ---
 
 # Tutorial Intro
@@ -47,3 +47,4 @@ The `npm run start` command builds your website locally and serves it through a 
 Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
 
 lkjlkjkljkljkljklj
+kkkkkkk
