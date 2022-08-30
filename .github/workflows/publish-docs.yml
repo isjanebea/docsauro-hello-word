@@ -38,3 +38,25 @@ jobs:
           --header 'Authorization: token ${{ secrets.PAT_CHANGE_BRANCH_PROTECTION_RULES_FROM_BEA }}' \
           --header 'Accept: application/vnd.github.luke-cage-preview+json' \
           --data '{"enforce_admins":true,"required_pull_request_reviews":{"dismiss_stale_reviews":true,"require_code_owner_reviews":true,"required_approving_review_count":2},"required_conversation_resolution":true,"required_status_checks":null,"restrictions":null,"required_linear_history":true}'
+
+  deploy:
+      # Add a dependency to the build job
+      needs: build
+
+      # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+      permissions:
+        pages: write      # to deploy to Pages
+        id-token: write   # to verify the deployment originates from an appropriate source
+
+      # Deploy to the github-pages environment
+      environment:
+        name: github-pages
+        url: ${{ steps.deployment.outputs.page_url }}
+
+      # Specify runner + deployment step
+      runs-on: ubuntu-latest
+      steps:
+        - name: Deploy to GitHub Pages
+          id: deployment
+          uses: actions/deploy-pages@v1
+  
